@@ -1,0 +1,90 @@
+eipalloc-0f837ad73274b832f	eipassoc-06807e8c64ffd2a61	vpc	us-east-1	eni-05b180f3327a4cc4e	572982736821	10.4.10.34	100.24.186.250	amazon
+eipalloc-0202fd91cad65b2c1	eipassoc-0b33c88669f54829c	vpc	us-east-1	eni-0107dec3602e841ad	572982736821	10.4.26.150	100.24.213.207	amazon
+eipalloc-01250b43ababb19bf	eipassoc-02d918314be12fdeb	vpc	us-east-1	eni-0e44130bf8fafcdec	572982736821	10.4.10.65	18.204.89.159	amazon
+TAGS	Name	MPOP-ALPHA-PULSAR-NLB-1
+eipalloc-072e5e26bf0aa659b	eipassoc-0cc2f23ae5c01f704	vpc	us-east-1	eni-02cd0ce8721f49a65	572982736821	10.4.1.162	18.205.123.136	amazon
+TAGS	Name	MPOP-ALPHA-PULSAR-NLB-2
+eipalloc-0b6bd8d1efdd1520b	eipassoc-0a7ee483593133e27	vpc	us-east-1	eni-0e2361b799d97198f	572982736821	10.4.10.249	18.205.76.123	amazon
+TAGS	Name	MGMT-PULSAR-U18-ADMIN-NLB-01
+eipalloc-03a5c9e4e7924d347	eipassoc-05553ebac99f43a4c	vpc	us-east-1	eni-0d2747323edde2b1a	572982736821	10.4.1.69	18.210.85.87	amazon
+TAGS	Name	MGMT-PULSAR-U18-ADMIN-NLB-02
+eipalloc-024efa6afe25e37e5	eipassoc-0807142baa66c634e	vpc	us-east-1	eni-026eb2565da87aa23	572982736821	10.19.11.156	18.211.229.168	amazon
+TAGS	Name	DPOP-RR-USW-DM-NAT-2-EIP
+TAGS	PopName	DPOP-RR-USW-DM
+TAGS	Environment	RapidResponse
+TAGS	EnvTier	DPOP
+TAGS	Tenant	Shared
+eipalloc-04ec9ddb7619d6c65	eipassoc-07fa401635976a83d	vpc	us-east-1	eni-048831703cc370d18	572982736821	10.66.11.39	18.213.132.37	amazon
+TAGS	Environment	DP-DELTA
+TAGS	Name	DPOP-DP-DELTA-NAT-2-EIP
+TAGS	PopName	DPOP-DP-DELTA
+TAGS	Tenant	Shared
+TAGS	EnvTier	DPOP
+eipalloc-031c851ac86d2bff1	eipassoc-0db98c4ca24911fe5	vpc	us-east-1	eni-0e4aa7a1807efb638	572982736821	10.12.1.126	18.213.85.91	amazon
+eipalloc-06aa9673b6ecef40c	eipassoc-02de940b8f1f0c1ea	vpc	us-east-1	eni-018beb02904ac213d	572982736821	10.13.1.190	23.20.154.75	amazon
+TAGS	Project	SPIRE
+TAGS	Owner	SecOps
+TAGS	Name	SPIFFE_TRUST_ZONE_ALPHA-us-east-1a
+TAGS	Environment	TRUST_ZONE_ALPHA
+eipalloc-025c9734c655f535d	eipassoc-0b4ea4f3b48d7bec9	vpc	us-east-1	eni-0068f028abd224d85	572982736821	10.4.10.200	3.224.224.132	amazon
+eipalloc-01bd9679fcdec9ead	eipassoc-0820eb5e142a1697f	vpc	us-east-1	eni-0cd113dab1744e46b	572982736821	172.16.3.30	3.225.31.114	amazon
+TAGS	Name	EAA-CYPERF-SA
+eipalloc-02b1bee0136edd9b4	eipassoc-0f5c0d25d13c7996d	vpc	us-east-1	eni-08016809ef5fbf5a5	572982736821	10.26.1.218	3.226.128.101	amazon
+TAGS	Name	DPOP-BETA-USE-2-DM-NAT-1-EIP
+TAGS	EnvTier	DPOP
+TAGS	Tenant	Shared
+TAGS	PopName	DPOP-BETA-USE-2-DM
+TAGS	Environment	BETA
+eipalloc-00c23c7386814a962	eipassoc-06d29aba133ee6df5	vpc	us-east-1	eni-05f6185cb5a07cc89	572982736821	10.4.1.134	3.233.47.129	amazon
+eipalloc-082505e0cfceaf808	eipassoc-0cc4fc929f533b11c	vpc	us-east-1	eni-0a815ffb3fb7c5945	572982736821	10.4.1.26	3.234.162.225	amazon
+TAGS	Name	MPOP-CONNECTOR-REPO
+eipalloc-009225fdee6ee0fbd	eipassoc-0329daae4bec7bfce	vpc	us-east-1	eni-0f1f2b2f0983e20ce	572982736821	10.13.2.25	34.194.83.58	amazon
+TAGS	Environment	TRUST_ZONE_ALPHA
+TAGS	Name	SPIFFE_TRUST_ZONE_ALPHA-us-east-1b
+TAGS	Project	SPIRE
+TAGS	Owner	SecOps
+eipalloc-046c5439eb57f18ad	eipassoc-073cfcc4a9526f03d	vpc	us-east-1	eni-0ac7d1d8597569622	572982736821	172.16.3.25	34.198.162.15	amazon
+eipalloc-3b5e6e0a	eipassoc-02bdad0761e3bf0bd	vpc	us-east-1	eni-226644c3	572982736821	10.10.10.32	34.198.217.240	amazon
+eipalloc-0111ccc541eda6b4d	eipassoc-07a022cf99465b2bf	vpc	us-east-1	eni-0f2730e8a1f0d2d62	572982736821	10.10.0.201	34.198.81.57	amazon
+eipalloc-0158a9eb4ff52cbd6	eipassoc-0b30942493ade9281	vpc	us-east-1	eni-03cca2d61bade32e4	572982736821	10.66.1.143	34.203.39.31	amazon
+TAGS	Name	DPOP-DP-DELTA-NAT-1-EIP
+TAGS	Environment	DP-DELTA
+TAGS	PopName	DPOP-DP-DELTA
+TAGS	Tenant	Shared
+TAGS	EnvTier	DPOP
+eipalloc-0ee37689925c0f954	eipassoc-0fa42252266d955bd	vpc	us-east-1	eni-07a88f6b5bad63a17	572982736821	10.4.1.5	34.225.39.110	amazon
+eipalloc-04cb6117c3ceecaa6	eipassoc-0e5a98aeb772763b3	vpc	us-east-1	eni-009acfa102e0a76c6	572982736821	172.16.3.196	35.168.106.56	amazon
+eipalloc-090653a5aeda95774	eipassoc-00c5dada2d5fe1fd7	vpc	us-east-1	eni-0fd7382eee292ee94	572982736821	10.19.1.17	44.207.211.188	amazon
+TAGS	PopName	DPOP-RR-USW-DM
+TAGS	EnvTier	DPOP
+TAGS	Tenant	Shared
+TAGS	Name	DPOP-RR-USW-DM-NAT-1-EIP
+TAGS	Environment	RapidResponse
+eipalloc-05db5fb432d752822	eipassoc-08fd9ec7000b8f31e	vpc	us-east-1	eni-007bcf6ac9ee62a4b	572982736821	172.16.2.191	44.207.57.248	amazon
+eipalloc-081248b4a564ddbf2	eipassoc-0ba1e7542b84f4e33	vpc	us-east-1	eni-0adb0211e67ecfd65	572982736821	10.0.48.122	44.221.143.153	amazon
+TAGS	Name	dpop-test-cc
+eipalloc-3af02342	eipassoc-0edb58fba70377f5f	vpc	us-east-1	eni-0236e3935f6b608b5	572982736821	10.4.10.148	52.1.140.188	amazon
+eipalloc-79b5651d	eipassoc-0de750ef7f0bd2513	vpc	us-east-1	eni-007fe321367bbf1c7	572982736821	10.4.1.157	52.1.177.67	amazon
+eipalloc-2ad4c14f	eipassoc-0eec30bcb2f2854c6	vpc	us-east-1	eni-042b2f632e6a7ec74	572982736821	10.4.10.139	52.2.105.108	amazon
+eipalloc-0a9bdd3f7a416dc95	eipassoc-099c30cac5f03660a	vpc	us-east-1	eni-003ed02ca5c631882	572982736821	172.16.1.101	52.21.242.7	amazon
+TAGS	aws:cloudformation:logical-id	NatEip
+TAGS	aws:cloudformation:stack-id	arn:aws:cloudformation:us-east-1:572982736821:stack/CyPerf-DK-New/2fe2f0d0-0048-11ec-9a05-0ade2cf02d6d
+TAGS	aws:cloudformation:stack-name	CyPerf-DK-New
+eipalloc-50049634	eipassoc-0960857afb1456215	vpc	us-east-1	eni-00cc15ce3fc3efb62	572982736821	10.4.26.22	52.72.16.0	amazon
+eipalloc-05c35fee7dd6e02d1	eipassoc-03fa3ec269bfdce6e	vpc	us-east-1	eni-07a7b7ecd4ff8a3e6	572982736821	10.28.1.190	54.144.58.188	amazon
+eipalloc-072340175f51b8a45	eipassoc-0c7649d53a245cd9e	vpc	us-east-1	eni-0cb0264fe9fca2370	572982736821	172.16.3.40	54.145.192.133	amazon
+TAGS	Name	EAA-CYPERF-CA
+eipalloc-0cc6d9aa68687d65f	eipassoc-036564c70b3b593d8	vpc	us-east-1	eni-057dfdd5b227a8406	572982736821	10.125.48.170	54.158.246.161	amazon
+TAGS	Tenant	Shared
+TAGS	EnvTier	DPOP
+TAGS	Environment	Prod
+TAGS	PopName	dpop-eks-sqa-dm
+TAGS	Name	dpop-eks-sqa-dm-us-east-1a
+eipalloc-5c6a4539	eipassoc-09399b20a51f39643	vpc	us-east-1	eni-04e7ef81ed8d88f0c	572982736821	10.4.1.120	54.175.238.229	amazon
+eipalloc-025000ac69ff660cc	eipassoc-00079974b02b6b224	vpc	us-east-1	eni-0e71fb9a18b5234a9	572982736821	10.26.11.147	54.236.133.18	amazon
+TAGS	Environment	BETA
+TAGS	EnvTier	DPOP
+TAGS	PopName	DPOP-BETA-USE-2-DM
+TAGS	Name	DPOP-BETA-USE-2-DM-NAT-2-EIP
+TAGS	Tenant	Shared
+eipalloc-0ad5cc4277119000c	eipassoc-0e9204c266f64f384	vpc	us-east-1	eni-0262cb18f46c1f049	572982736821	10.4.1.209	54.81.140.106	amazon

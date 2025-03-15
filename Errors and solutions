@@ -1,0 +1,38 @@
+Issue No 01:
+    while running "sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.24.0" command on ubuntu 22.04 Focal received below error.
+    Error:
+        [ERROR CRI]: container runtime is not running: output: time="2023-02-05T08:50:42Z" level=fatal msg="validate service connection: CRI v1 runtime API is not
+        implemented for endpoint \"unix:///var/run/containerd/containerd.sock\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService"
+    Solution:
+        By searching the web it appears this is an issue with the old containerd provided by Ubuntu 20.
+        solved it with the following steps (as root):
+        1. Set up the Docker repository as described in https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository
+        2. Remove the old containerd: apt remove containerd
+        3. Update repository data and install the new containerd: apt update && apt install containerd.io
+        4. Remove the installed default config file: rm /etc/containerd/config.toml
+        5. Restart containerd: systemctl restart containerd
+        The kubeadm init command worked fine afterwards.
+        Link: https://forum.linuxfoundation.org/discussion/862825/kubeadm-init-error-cri-v1-runtime-api-is-not-implemented
+
+Issue No 02:
+  Error: CrashLoopBackOff Error in Kubernetes
+  Solution:
+    The K8S kubelet will wait an increasing ‘backoff’ time between crashes before attempting to start the pod again. The K8S restartPolicy is set to ‘always’ by default.
+    This can also occur if the restartPolicy has been changed to ‘onFailure.’
+    When a pod shows the CrashLoopBackoff status, it means it is waiting for the given time specified by the ‘backoff’ to restart and will likely fail again.
+    Link to solve the Issue: https://medium.com/@darshana.gajbhiye/crashloopbackoff-error-in-kubernetes-what-it-is-and-its-troubleshooting-approaches-cd1db1d17bd5#:~:text=CrashLoopBackOff%20is%20a%20Kubernetes%20state,a%20Pod%20from%20starting%20correctly.
+
+Issue No. 03:
+Error: pod status was showing the ImagePullBackOff 
+Solution: The status ImagePullBackOff means that a container could not start because Kubernetes could not pull a container image (for reasons such as invalid image name, or pulling from a private registry without imagePullSecret ).
+
+Issue No. 04: Statefulset
+    Error: 0/3 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling. 
+    Solution: 
+        This error I received because I did not mentioned the Storage class in my manifest file. To get the definitive error statement, you can run the following command:
+            kubectl describe  pvc www-web-0(persistent volume name assigned to statefulset)
+        you will notice something like: storageclass.storage.k8s.io "my-storage-class" not found
+        You can run the following command to get your cluster's available storage class and replace it in yaml file.
+            kubectl get sc
+        
+

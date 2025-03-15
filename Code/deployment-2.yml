@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deploy
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: hello-world
+  revisionHistoryLimit: 5
+  progressDeadlineSeconds: 300
+  minReadySeconds: 10   
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - name: hello-pod
+          image: nigelpoulton/k8sbook:2.0
+          ports:
+          - containerPort: 8080
+
+
+
+# revisionHistoryLimit: 5  It tells K8s to keep the configs of previous 5 releases. This means the previous 5 replicasets objects will kept to rollback quickly/easily if something goes wrong.
+# progressDeadlineSeconds: 300    How long each new pod replica has to start before K8s considers the rollout to have stalled.
+#   minReadySeconds: 10    /// It tells K8s that any new replica must be up and running for 10 sec without any issues before its allowed to start replacing the next one.
+#spec.strategy map telling K8s you want this deployment to
+# 1. update using the rollingUpdate strategy.
+# 2. Never have more than one Pod below desired state.(maxUnavailable)
+# 3. Never have more than one pod above desired state. (maxSurge)

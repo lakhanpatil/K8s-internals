@@ -1,0 +1,39 @@
+Delete the “Crashloopbackoff” state pods from all Namespaces:
+kubectl delete pods $(kubectl get pod --all-namespaces -o jsonpath='{.items[?(@.status.containerStatuses[*].state.waiting.reason=="CrashLoopBackOff")].metadata.name}')
+
+Delete the “ImagePullBackOff” state pods from all Namespaces:
+kubectl delete pods $(kubectl get pod --all-namespaces -o jsonpath='{.items[?(@.status.containerStatuses[*].state.waiting.reason=="ImagePullBackOff")].metadata.name}')
+
+Delete the “ErrImagePull” state pods from all Namespaces:
+kubectl delete pods $(kubectl get pod --all-namespaces -o jsonpath='{.items[?(@.status.containerStatuses[*].state.waiting.reason=="ErrImagePull")].metadata.name}')
+
+Delete the Pending pods from all Namespaces:
+kubectl delete pods --field-selector status.phase=Pending --all-namespaces
+
+delete the Evicted/Failed pods from all Namespaces:
+kubectl delete pods --field-selector status.phase=Failed --all-namespaces
+
+To export the yaml config of pod in .yml format use below command.
+kubectl get pod pod-name --export -o yaml -> to print the config on terminal.
+kubectl get pod pod-name -o yaml > pod-name.yml
+
+To update container image of StatefulSet pods we can use below command
+kubectl patch statefulset web --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/image", "value":"gcr.io/google_containers/nginx-slim:0.8"}]'
+Get the Pods to view their container images:
+for p in 0 1 2; do kubectl get pod "web-$p" --template '{{range $i, $c := .spec.containers}}{{$c.image}}{{end}}'; echo; done
+Note: You can also use below command to view the status of a rolling update to a StatefulSet
+kubectl rollout status sts/<name>
+
+To get the details of how many pods are behind the service. It will list the IPs of the pods with port number.
+kubectl get endpoints svc-name
+
+To get the wide output of the pod using the label.
+kubectl get po -l run=my-nginx -o wide
+
+To get the only pods IP
+kubectl get po -l run=my-nginx -o custom-columns=POD_IP:.status.podIPs
+
+To print the environment variables assigned to the POD. When a Pod runs on a Node, the kubelet adds a set of environment variables for each active Service.
+kubectl exec my-nginx-fdd6574f7-2s2v4 -- printenv
+
+kubectl port-forward svc/grafana 3000:80 -n grafana

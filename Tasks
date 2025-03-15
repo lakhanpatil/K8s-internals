@@ -1,0 +1,3 @@
+1. Enabling the metric API server in Kubernetes
+2. Container resize policy. Link: https://kubernetes.io/docs/tasks/configure-pod-container/resize-container-resources/
+3. Write an automated script to detect the root cause of Pod restart.

@@ -1,0 +1,17 @@
+
+apiVersion: v1 
+Kind: Pod
+
+metadata:             => Parant (Dictinory)
+  name: myapp-pod     => Child of metadata
+  lables:             => Child of metadata and sibling of name
+    app: myapp        => child of lables
+
+#Note: Siblings should have more spaces than their parants. They should have same number of spaces, it doesn't matter how many but it should be same as above example. 
+#Note: Under metedata you can only add name or lable or what kubernetes expect to be there. We can not add any other property as you wish.However in labels you can have any kind of 
+#key value pair.
+
+spec:                  => Specification, Parant (Dictinory)
+  containers:          => Child of spec
+    - name: nginx-container   => child of containers
+      image: nginx            => Child of containers and sibling of name

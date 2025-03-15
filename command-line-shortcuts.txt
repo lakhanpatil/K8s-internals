@@ -1,0 +1,16 @@
+ctrl-r => to search through command history and press repeatedly to cycle through more matches
+ctrl-w => to delete the last word
+ctrl-u => to delete the content from current cursor back to the start of the line.
+alt-f or ctrl-f => to move forward by word
+alt-b or ctrl-b => to move backward by word
+ctrl-a => to move cursor to beginning of line
+ctrl-e => to move cursor to end of line
+ctrl-l => to clear the screen
+!! => for execute last command
+cd ~ => Go to home directory
+cd - => back to the previous working directory
+pstree -p => is a helpful display of the process tree.
+pgrep =>  find process ID by name
+pkill => kill process by name
+nohup or disown => if you want a background process to keep running forever.
+netstat -lntp

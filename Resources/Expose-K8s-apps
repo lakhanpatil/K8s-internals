@@ -1,0 +1,61 @@
+Introduction:
+  This document focuses on ways to expose applications running in a Kubernetes cluster for external access.
+  Kubernetes applications consist of one or more Pods running one or more containers. Every Pod gets its own IP address.
+  While possible, accessing applications by their Pods’ IPs is usually an anti-pattern. Pods are non-permanent objects that may be created and destroyed, “moving” between the cluster’s
+  nodes, because of a scaling event, a node replacement, or a configuration change. To address these concerns and reliably expose an application, the Service resource type has been
+  introduced. A Service is an abstraction over a dynamically constructed set of Pods defined by a set of label selectors.
+  Here is an example of a Service definition that matches, using a label selector, a set of Pods in a Deployment:
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: some-service
+          namespace: some-namespace
+        spec:
+          type: ClusterIP
+          selector:
+            app.kubernetes.io/name: some-app
+          ports:
+            - name: svc-port
+              port: 80
+              targetPort: app-port
+              protocol: TCP
+        ---
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: some-deployment
+          namespace: some-namespace
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              app.kubernetes.io/name: some-app
+          template:
+            metadata:
+              labels:
+                app.kubernetes.io/name: some-app
+            spec:
+              containers:
+                - name: nginx
+                  image: public.ecr.aws/nginx/nginx
+                  ports:
+                    - name: app-port
+                      containerPort: 80
+
+Exposing a Service:
+  The way in which a Service resource is exposed is controlled via its spec.type setting. Below are some of the types of the Services.
+    ClusterIP (as in the example above), which assigns it a cluster-private virtual IP and is the defaul
+    NodePort, which exposes the above ClusterIP via a static port on each cluster node
+    LoadBalancer, which automatically creates a ClusterIP, sets the NodePort, and indicates that the cluster’s infrastructure environment (e.g., cloud provider) is expected to create
+    a load balancing component to expose the Pods behind the Service
+
+    When a pod linked to Service created and ready its IP is mapped to the ClusterIP to provide the load balancing between the Pods.  A kube-proxy daemon, on each cluster node,
+    defines that mapping in iptables rules (by default) for the Linux kernel to use when routing network packets, but itself is not actually on the data path.
+    Kubernetes also provides a built-in internal service discovery and communication mechanism. Each Service’s ClusterIP is provided with a cluster-private DNS name of
+    <service-name>.<namespace-name>.svc.cluster.local form, accessible from Pods in the cluster.
+
+    To allow external access, LoadBalancer type is usually the preferred solution, as it combines the other options with load balancing capabilities and, possibly, additional features.
+    In Kubernetes, controller is an implementation of a control loop pattern, and its responsibility is to reconcile the desired state, defined by various Kubernetes resources,
+    with the actual state of the system. A service controller watches for new Service resources to be created and, for those with the spec.type of LoadBalancer, the controller \
+    provisions a load balancer using the cloud provider’s APIs. It then configures the load balancers’ listeners and target groups and registers the Pods behind the Service as targets.
